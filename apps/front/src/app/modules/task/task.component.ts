@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from './services/task.service';
 import { ITask } from '@nt-al/api-interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nt-al-task',
@@ -9,7 +10,7 @@ import { ITask } from '@nt-al/api-interfaces';
 })
 export class TaskComponent implements OnInit {
   public tasks: ITask[] | undefined;
-  constructor(public service: TaskService) {}
+  constructor(public service: TaskService, public router: Router) {}
 
   ngOnInit(): void {
     this.getTasks();
@@ -20,5 +21,8 @@ export class TaskComponent implements OnInit {
       this.tasks = tasks;
       console.log(this.tasks);
     });
+  }
+  toEdit(task: ITask): void {
+    this.router.navigateByUrl(`tarefas/${task?.id}`);
   }
 }

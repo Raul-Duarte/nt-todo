@@ -2,9 +2,19 @@ section.task-list {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(1, 1fr);
+  mat-card {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
 }
 @media (min-width: 43rem) {
   section.task-list {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 60rem) {
+  section.task-list {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

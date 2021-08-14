@@ -1,5 +1,6 @@
 <section class="task-list">
-  <mat-card *ngFor="let task of tasks">
-    {{ task?.description }}
+  <mat-card *ngFor="let task of tasks" (click)='toEdit(task)'>
+    <div>{{ task?.description }}</div>
+    <div>{{ task?.status }}</div>
   </mat-card>
 </section>
