@@ -1,1 +1,5 @@
-<p>task works!</p>
+<section class="task-list">
+  <mat-card *ngFor="let task of tasks">
+    {{ task?.description }}
+  </mat-card>
+</section>
