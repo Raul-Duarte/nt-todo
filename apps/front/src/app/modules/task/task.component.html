@@ -1,6 +1,8 @@
 <section class="task-list">
-  <mat-card *ngFor="let task of tasks" (click)='toEdit(task)'>
+  <mat-card *ngFor="let task of tasks" (click)="toEdit(task)">
     <div>{{ task?.description }}</div>
-    <div>{{ task?.status }}</div>
+    <mat-chip-list>
+      <mat-chip color="accent" selected>{{ task?.status }} </mat-chip>
+    </mat-chip-list>
   </mat-card>
 </section>

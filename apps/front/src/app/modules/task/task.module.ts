@@ -7,6 +7,11 @@ import { TaskRoutingModule } from './task-routing.module';
 import { TaskComponent } from './task.component';
 import { MatCardModule } from '@angular/material/card';
 import { TaskEditorComponent } from './components/task-editor/task-editor.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -17,7 +22,12 @@ import { TaskEditorComponent } from './components/task-editor/task-editor.compon
   imports: [
     CommonModule,
     TaskRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatInputModule
   ]
 })
 export class TaskModule { }

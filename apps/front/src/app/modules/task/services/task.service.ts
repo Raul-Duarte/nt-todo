@@ -11,4 +11,7 @@ export class TaskService {
   getAll(): Promise<ITask[] | undefined> {
     return this.http.get<ITask[]>('/api/tasks').toPromise();
   }
+  getOne(id: number): Promise<ITask[] | undefined> {
+    return this.http.get<ITask[]>('/api/tasks/' + id).toPromise();
+  }
 }
