@@ -42,7 +42,41 @@ export class TaskEditorComponent implements OnInit {
     this.service.getOne(this.id).then((res) => {
       this.data = res;
       this.form.patchValue(this.data);
-      console.log(this.form.value)
+      console.log(this.form.value);
     });
+  }
+  save(): void {
+    if (!this.id) {
+      this.createItem();
+    } else {
+      this.editItem();
+    }
+  }
+
+  editItem(): void {
+    const requestObject = {
+      status: this.form?.value?.status,
+      description: this.form?.value?.description,
+    };
+
+    this.service
+      .edit(this.id, requestObject)
+      .then(() => {
+        this.router.navigate(['../'], { relativeTo: this.activateRoute });
+      })
+      .catch((rej: any) => {});
+  }
+  createItem(): void {
+    const requestObject = {
+      status: this.form?.value?.status,
+      description: this.form?.value?.description,
+    };
+
+    this.service
+      .create(requestObject)
+      .then((res) => {
+        this.router.navigate(['../'], { relativeTo: this.activateRoute });
+      })
+      .catch((rej: any) => {});
   }
 }

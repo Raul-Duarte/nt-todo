@@ -12,6 +12,10 @@ const routes: Routes = [
     path: ':id',
     component: TaskEditorComponent,
   },
+  {
+    path: 'novo',
+    component: TaskEditorComponent,
+  },
 ];
 
 @NgModule({

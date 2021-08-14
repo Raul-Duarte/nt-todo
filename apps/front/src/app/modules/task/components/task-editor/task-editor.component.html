@@ -19,8 +19,9 @@
         <mat-option value="Fazendo">Fazendo</mat-option>
       </mat-select>
       <mat-hint *ngIf="form.get('status')?.errors">
-        {{form.get('status')?.errors?.error?.message}}
+        {{ form.get('status')?.errors?.error?.message }}
       </mat-hint>
     </mat-form-field>
+    <button mat-raised-button color="primary" (click)='save()'>Primary</button>
   </div>
 </form>
